@@ -1,0 +1,105 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static '/style/quality.css' %}">
+
+<body>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <h1>WINE QUALITY TEST</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table class=" left">
+            <tr>
+                <td class=" name">
+                    <br>
+                    fixedacidity--> <br><br><br><br>
+                    volatileacidity--> <br><br>
+                </td>
+                <td>
+                    <input class="input" type=" text" name="textfixedacidity" placeholder="Fixed acidity"> <br><br>
+                    <input class="input" type=" text" name="textvolatileacidity" placeholder="Volatile acidity"> <br>
+                </td>
+            </tr>
+        <table class="right">
+            <tr>
+                <td class=" name">
+                    <br>
+                    citricacid--> <br><br><br><br>
+                    residualsugar--> <br><br>
+                </td>
+                <td>
+                    <input class="input" type=" text" name="textcitricacid" placeholder="Citric acid"> <br><br>
+                    <input class="input" type=" text" name="textresidualsugar" placeholder="Residual sugar"> <br>
+                </td>
+            </tr>
+        
+        <table class="center">
+            <tr>
+                <td class=" name">
+                    <br>
+                    chlorides--> <br><br><br><br>
+                    freesulfurdioxide--> <br><br>
+                </td>
+                <td>
+                    <input class="input" type=" text" name="textchlorides" placeholder="Chlorides"> <br><br>
+                    <input class="input" type=" text" name="textfreesulfurdioxide"
+                                    placeholder="Free sulfur dioxide"> <br>
+                </td>
+            </tr>
+        <table class="bleft">
+            <tr>
+                <td class=" name">
+                    <br>
+                    totalsulfurdioxide--> <br><br><br><br>
+                    density--> <br><br>
+                </td>
+                <td>
+                    <input class="input" type=" text" name="texttotalsulfurdioxide"
+                                        placeholder="Total sulfur dioxide"> <br><br>
+                    <input class="input" type=" text" name="textdensity" placeholder="Density"> <br>
+                </td>
+            </tr>
+                            
+        <table class="right">
+            <tr>
+                <td class=" name">
+                    <br>
+                    alcohol--> <br><br><br>
+                </td>
+                <td>
+                    <input class="input" type=" text" name="textalcohol" placeholder="Alcohol">
+                    <br><br>
+                </td>
+            </tr>
+                                   
+        <table class="bcenter">
+            <tr>
+                <td class=" name">
+                    <br>
+                    ph--> <br><br><br><br>
+                    sulphates--> <br><br>
+                </td>
+                <td>
+                    <input class="input" type=" text" name="textph" placeholder="pH">
+                    <br><br>
+                    <input class="input" type=" text" name="textsulphates"placeholder="Sulphates"> <br>
+                </td>
+            </tr>
+
+                <td class="bn31">
+         
+                    <button class="bn31span" type="submit" name="buttonsubmit"><b>TEST</b></button>
+                </td>
+                <td style="color: #fff;font-weight:bold;font-size: 2.5em; text-align: center;">
+                    <i> {{result}} </i>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+{% endblock %}
